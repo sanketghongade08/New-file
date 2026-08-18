@@ -11,7 +11,12 @@ public:
 
     
     Complex add(const Complex &c) {
-        return Complex(real + c.real, imag + c.imag);
+        Complex T4;
+        T4.real=real+c.real;
+        T4.imag=imag+c.imag;
+        real=T4.real;
+        imag=T4.imag;
+        return T4;
     }
 
    
@@ -19,7 +24,7 @@ public:
         return Complex(real - c.real, imag - c.imag);
     }
 
-     
+    
     void display() const {
         cout << real << " + i" << imag << endl;
     }
