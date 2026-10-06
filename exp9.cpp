@@ -11,7 +11,9 @@ public:
     virtual double calculateArea() const = 0;
 
     // Pure virtual function to calculate perimeter
-    virtual double calculatePerimeter() const = 0;
+    virtual double calculatePerimeter(){ 
+        return 2*PI;
+    }
 };
 
 // Derived class Circle
@@ -29,9 +31,9 @@ public:
     }
 
     // Calculate perimeter of circle
-    double calculatePerimeter() const override {
+    /*double calculatePerimeter() const override {
         return 2 * PI * radius;
-    }
+    }*/
 };
 
 // Derived class Rectangle
@@ -51,7 +53,7 @@ public:
     }
 
     // Calculate perimeter of rectangle
-    double calculatePerimeter() const override {
+    double calculatePerimeter()  {
         return 2 * (length + width);
     }
 };
@@ -79,7 +81,7 @@ public:
     }
 
     // Calculate perimeter of triangle
-    double calculatePerimeter() const override {
+    double calculatePerimeter()  {
         return side1 + side2 + side3;
     }
 };
@@ -87,6 +89,7 @@ public:
 int main() {
     // Create objects
     Circle circle(7.0);
+    //Shape s();
     Rectangle rectangle(4.2, 8.0);
     Triangle triangle(4.0, 4.0, 3.2);
 
